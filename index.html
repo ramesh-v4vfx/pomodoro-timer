@@ -6,7 +6,7 @@
 <style>
   body {
     font-family: system-ui, sans-serif;
-    background: #0f1220;
+    background: #0b0000;
     color: #fff;
     display: flex;
     justify-content: center;
@@ -65,8 +65,44 @@
 
   .history div {
     padding: 6px;
-    border-bottom: 1px solid #2a2e55;
+    border-bottom: 1px solid #552a2a;
   }
+
+ .app {
+  background: #040724;
+  padding: 25px;
+  border-radius: 14px;
+  width: 360px;
+  box-shadow: 0 20px 40px rgba(0,0,0,.4);
+
+  position: relative; /* REQUIRED */
+}
+
+/* watermark layer */
+.app::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("images/Ramesh-logo-scifi.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 60px;
+  margin-top: 8px;
+
+  opacity: 0.8;          /* FORCE visibility */
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+/* content above watermark */
+.app > * {
+  position: relative;
+  z-index: 1;
+}
+
+
 </style>
 </head>
 
